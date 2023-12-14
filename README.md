@@ -173,7 +173,7 @@ EEA（事件论元抽取）
 本项目仅可应用于研究目的，项目开发者不承担任何因使用本项目（包含但不限于数据、模型、代码等）导致的危害或损失。详细请参考免责声明。
 
 #### 开源协议
-本项目中的代码和数据依照 [Apache-2.0](LICENSE) 协议开源，社区使用YAYI UIE模型或其衍生品请遵循[Baichuan2](https://github.com/baichuan-inc/Baichuan2)的社区协议和商用协议。
+本项目中的代码和数据依照 [Apache-2.0](./LICENSE.txt) 协议开源，社区使用YAYI UIE模型或其衍生品请遵循[Baichuan2](https://github.com/baichuan-inc/Baichuan2)的社区协议和商用协议。
 
 ## 更新日志
 - [2023/12/15] YAYI-UIE大模型正式对外发布并开源。
