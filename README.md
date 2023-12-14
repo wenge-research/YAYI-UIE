@@ -13,14 +13,14 @@
 </div>
 
 
-## 介绍/Introduction
+## 介绍
 雅意信息抽取统一大模型 (YAYI-UIE)在百万级人工构造的高质量信息抽取数据上进行指令微调得到，统一训练信息抽取任务包括命名实体识别（NER），关系抽取（RE）和事件抽取（EE），实现通用、安全、金融、生物、医疗、商业、个人、车辆、电影、工业、餐厅、科学等场景下结构化抽取。
 
 通过雅意IE大模型的开源为促进中文预训练大模型开源社区的发展，贡献自己的一份力量，通过开源，与每一位合作伙伴共建雅意大模型生态。
 
-![instruction](./assets/YAYI-UIE-1.png)
+![instruction](/assets/YAYI-UIE-1.png)
 
-## 模型地址 Model links
+## 模型地址
 | Model Name | 🤗HF |  Download Links  |
 | --------- | ---------    | --------- |
 |  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |
@@ -32,10 +32,7 @@
 - RE：中文覆盖**232**种关系包括买资，增持，重组，国籍，别名，亲属，入股，转让，导致，发生地点，制造商等，英文覆盖**236**种关系包括founded by，state or province of headquarters，employee of，occupation，creator等。
 - EE：中文覆盖**84**种事件类型,包括中标，高管变动，产品行为-发布，公司上市等，和**203**种论元，英文覆盖**45**种事件类型，包括Born, Demonstrate, Meet, End Organization, Divorce等，和**62**种论元。
 
-<div align="center">
-<br>
-![数据分布](./assets/data-dist.png)
-</div>
+![数据分布](/assets/data-dist.png)
 
 ## 运行方式
 #### 安装环境
@@ -78,7 +75,7 @@ response = model.generate(**inputs, max_new_tokens=512, temperature=0)
 print(tokenizer.decode(response[0],skip_special_tokens=True))
 ```
 
-#### 指令样例/Sample Prompts
+#### 指令样例
 注：
 - 指令前加入具体任务类型用中括号表示【】（可加可不加）
 - 为了让模型能抽取更全的信息，尽量在指令中加入细粒度的提示，比如“会见地点”，“会议地点”等，而不是统一为“地点”。
@@ -106,7 +103,7 @@ print(tokenizer.decode(response[0],skip_special_tokens=True))
 ```
 ```
 文本：xx
-已知论元角色列表是[时间，地点，会见主体，会见对象]，请根据论元角色列表从给定的输入中抽取可能的论元，以json[{角色:[论元],}]格式输出。
+已知论元角色列表是[时间，地点，会见主体，会见对象]，请根据论元角色列表从给定的输入中抽取可能的论元，以json{角色:论元}格式输出。
 ```
 
 ## 模型zero-shot评测
@@ -160,10 +157,7 @@ EEA（事件论元抽取）
 | YAYI-UIE | 19.74 | **63.06** | 59.42 | **61.24** |
 
 
-<div align="center">
-<br>
-![零样本推理性能分布](./assets/zh-0shot.png)
-</div>
+![零样本推理性能分布](/assets/zh-0shot.png)
 
 ## 相关协议
 #### 局限性
@@ -179,7 +173,7 @@ EEA（事件论元抽取）
 本项目仅可应用于研究目的，项目开发者不承担任何因使用本项目（包含但不限于数据、模型、代码等）导致的危害或损失。详细请参考免责声明。
 
 #### 开源协议
-本项目中的代码和数据依照 [Apache-2.0](LICENSE) 协议开源，社区使用YAYI UIE模型或其衍生品请遵循Baichuan2的社区协议和商用协议。
+本项目中的代码和数据依照 [Apache-2.0](LICENSE) 协议开源，社区使用YAYI UIE模型或其衍生品请遵循[Baichuan2](https://github.com/baichuan-inc/Baichuan2)的社区协议和商用协议。
 
 ## 更新日志
 - [2023/12/15] YAYI-UIE大模型正式对外发布并开源。
