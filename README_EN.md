@@ -172,7 +172,7 @@ This project is intended only for research purposes. The project developers are 
 limited to data, models, and code. For more details, please refer to the disclaimer.
 
 #### Open Source License
-The code and data in this project is open-sourced under the [Apache-2.0](LICENSE) license. The use of YAYI-UIE model or its derivatives must adhere to [Baichuan2](https://github.com/baichuan-inc/Baichuan2)'s community and commercial Model License.
+The code and data in this project is open-sourced under the [Apache-2.0](./LICENSE.txt) license. The use of YAYI-UIE model or its derivatives must adhere to [Baichuan2](https://github.com/baichuan-inc/Baichuan2)'s community and commercial Model License.
 
 ## Updates
 - [2023/12/15] YAYI-UIE is released and open-sourced
