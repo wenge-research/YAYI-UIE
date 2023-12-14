@@ -25,7 +25,7 @@ The open-source of YAYI-UIE aims to foster the growth of the Chinese PLM open-so
 ## Model links
 | Model Name | 🤗HF |  Download Links  |
 | --------- | ---------    | --------- |
-|  YAYI-UIE  | wenge-research/yayi-uie  | [YAYI-UIE](https://huggingface.co/wenge-research/yayi-uie)  |
+|  YAYI-UIE  | wenge-research/yayi-uie  | [YAYI-UIE](https://huggingface.co/wenge-research/YAYI-UIE)  |
 
 
 ## Training Datasets
@@ -35,10 +35,9 @@ In the corpus of over a million entries, 54% are in Chinese and 46% in English. 
 - RE: In Chinese, it includes **232** types of relations like acquisitions, stake increases, restructurings, nationality, aliases, relatives, buying shares, transfers, causes, locations of occurrence, manufacturers, etc., and in English, 236 types of relations such as founded by, state or province of headquarters, employee of, occupation, creator, etc.
 - EE: Chinese covers **84** types of events including winning a bid, executive changes, product actions - launches, company listings, etc., and **203** types of arguments, whereas English covers **45** types of events such as Birth, Demonstration, Meeting, End of Organization, Divorce, etc., and **62** types of arguments.
 
-<div align="center">
-<br>
+
 ![Data Distribution](./assets/data-dist.png)
-</div>
+
 
 ## Quick Start
 #### Set up conda envs
@@ -153,10 +152,7 @@ EEA（Event Arguments Extraction）
 | YAYI-UIE | 19.74 | **63.06** | 59.42 | **61.24** |
 
 
-<div align="center">
-<br>
 ![zero-shot performance](./assets/zh-0shot.png)
-</div>
 
 ## Terms and Conditions
 #### Limitations
@@ -176,7 +172,7 @@ This project is intended only for research purposes. The project developers are 
 limited to data, models, and code. For more details, please refer to the disclaimer.
 
 #### Open Source License
-The code and data in this project is open-sourced under the [Apache-2.0](LICENSE) license. The use of YAYI-UIE model or its derivatives must adhere to Baichuan2's community and commercial Model License.
+The code and data in this project is open-sourced under the [Apache-2.0](LICENSE) license. The use of YAYI-UIE model or its derivatives must adhere to [Baichuan2](https://github.com/baichuan-inc/Baichuan2)'s community and commercial Model License.
 
 ## Updates
 - [2023/12/15] YAYI-UIE is released and open-sourced
