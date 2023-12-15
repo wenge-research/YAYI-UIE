@@ -35,6 +35,11 @@ In the corpus of over a million entries, 54% are in Chinese and 46% in English. 
 - RE: In Chinese, it includes **232** types of relations like acquisitions, stake increases, restructurings, nationality, aliases, relatives, buying shares, transfers, causes, locations of occurrence, manufacturers, etc., and in English, 236 types of relations such as founded by, state or province of headquarters, employee of, occupation, creator, etc.
 - EE: Chinese covers **84** types of events including winning a bid, executive changes, product actions - launches, company listings, etc., and **203** types of arguments, whereas English covers **45** types of events such as Birth, Demonstration, Meeting, End of Organization, Divorce, etc., and **62** types of arguments.
 
+#### Data links
+| Data Name | 🤗HF |  Download Links  |
+| --------- | ---------    | --------- |
+|  YAYI-UIE  | wenge-research/yayi-uie/yayi_uie_sft_data  | [YAYI-UIE](https://huggingface.co/wenge-research/YAYI-UIE/yayi_uie_sft_data )  |
+
 
 ![Data Distribution](./assets/data-dist.png)
 
