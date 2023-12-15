@@ -63,7 +63,7 @@ pip install -r requirements.txt
 
 #### Inference
 We've alredy open-sourced our model weights on [Huggingface](https://huggingface.co/wenge-research). 
-The following is a code snippet for using YAYI-UIE for downstream task inference. It can run on a single A100/A800 GPU, and it occupies approximately 33GB of GPU memory when using FP16 precision for inference.
+The following is a code snippet for using YAYI-UIE for downstream task inference. It can run on a single A100/A800 GPU, and it occupies approximately 33GB of GPU memory when using bf16 precision for inference.
 ```python
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -186,7 +186,7 @@ The code and data in this project is open-sourced under the [Apache-2.0](./LICEN
 If you are using the resource for your work, please cite the our paper:
 ```
 @article{YAYI-UIE,
-  author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Mingzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
+  author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Minzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
   title     = { YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction},
   journal   = {arXiv preprint arXiv},
   year      = {2023}
