@@ -58,7 +58,7 @@ pip install -r requirements.txt
 其中 `torch` 和 `transformers` 版本不建议低于推荐版本。
 
 #### 模型推理
-模型已在我们的 [Huggingface 模型仓库](https://huggingface.co/wenge-research) 开源，欢迎下载使用。以下是一个简单调用 `YAYI-UIE` 进行下游任务推理的示例代码，可在单张 A100/A800 等GPU运行，使用FP16精度推理时约占用 33GB 显存：
+模型已在我们的 [Huggingface 模型仓库](https://huggingface.co/wenge-research) 开源，欢迎下载使用。以下是一个简单调用 `YAYI-UIE` 进行下游任务推理的示例代码，可在单张 A100/A800 等GPU运行，使用bf16精度推理时约占用 33GB 显存：
 
 ```python
 import torch
@@ -188,8 +188,8 @@ EEA（事件论元抽取）
 
 ```
 @article{YAYI-UIE,
-  author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Mingzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
-  title     = { YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction},
+  author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Minzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
+  title     = {YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction},
   journal   = {arXiv preprint arXiv},
   year      = {2023}
 }
