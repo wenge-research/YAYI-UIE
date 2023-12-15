@@ -179,6 +179,7 @@ The code and data in this project is open-sourced under the [Apache-2.0](./LICEN
 
 ## Reference 
 - Databricks [dolly](https://github.com/databrickslabs/dolly) and Huggingface [transformers](https://github.com/huggingface/transformers) ；
+- The open source version is fine-tuned based on [Baichuan2-13B](https://github.com/baichuan-inc/Baichuan2);
 - Distributed training use Microsoft [DeepSpeed](https://github.com/microsoft/deepspeed) and configs from [ZeRO stage 2](https://huggingface.co/docs/transformers/main_classes/deepspeed#zero2-config) ；
 - We sincerely appreciate the support provided by the following open-source projects.:[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2-Base](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [DeepKE-LLM](https://github.com/zjunlp/KnowLM/tree/main)
 
@@ -187,7 +188,7 @@ If you are using the resource for your work, please cite the our paper:
 ```
 @article{YAYI-UIE,
   author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Minzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
-  title     = { YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction},
+  title     = {YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction},
   journal   = {arXiv preprint arXiv},
   year      = {2023}
 }
