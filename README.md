@@ -32,6 +32,8 @@
 - RE：中文覆盖**232**种关系包括买资，增持，重组，国籍，别名，亲属，入股，转让，导致，发生地点，制造商等，英文覆盖**236**种关系包括founded by，state or province of headquarters，employee of，occupation，creator等。
 - EE：中文覆盖**84**种事件类型,包括中标，高管变动，产品行为-发布，公司上市等，和**203**种论元，英文覆盖**45**种事件类型，包括Born, Demonstrate, Meet, End Organization, Divorce等，和**62**种论元。
 
+YAYI-UIE 训练数据[下载地址](https://huggingface.co/wenge-research/yayi_uie_sft_data )。
+
 ![数据分布](/assets/data-dist.png)
 
 ## 运行方式
