@@ -28,7 +28,7 @@ The open-source of YAYI-UIE aims to foster the growth of the Chinese PLM open-so
 | Name | 🤗 HF Model Name   |  Download Links  |
 | --------- | ---------    | --------- |
 |  YAYI-UIE  | wenge-research/yayi-uie  | [Model Download](https://huggingface.co/wenge-research/yayi-uie)  |
-| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [Data Download](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|
+| YAYI-UIE Data | wenge-research/yayi_uie_sft_data| [Data Download](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|
 
 
 ## Training Datasets
@@ -184,7 +184,7 @@ The code and data in this project is open-sourced under the [Apache-2.0](./LICEN
 - [YAYI](https://github.com/wenge-research/YAYI/blob/main/training/trainer.py) and Huggingface [transformers](https://github.com/huggingface/transformers) ；
 - The open source version is fine-tuned based on [Baichuan2-13B](https://github.com/baichuan-inc/Baichuan2);
 - Distributed training use Microsoft [DeepSpeed](https://github.com/microsoft/deepspeed) and configs from [ZeRO stage 2](https://huggingface.co/docs/transformers/main_classes/deepspeed#zero2-config) ；
-- We sincerely appreciate the support provided by the following open-source projects.:[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2-Base](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [DeepKE-LLM](https://github.com/zjunlp/KnowLM/tree/main)
+- We sincerely appreciate the support provided by the following open-source projects.:[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2-Base](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [KnowLM](https://github.com/zjunlp/KnowLM/tree/main)
 
 ## Citation
 If you are using the resource for your work, please cite our paper:
