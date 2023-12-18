@@ -26,7 +26,7 @@
 | 名称 | 🤗 HF模型标识  |  下载地址  |
 |:----------|:----------:|:----------:|
 |  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |
-| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/wenge-research/yayi_uie_sft_data)|
+| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|
 
 
 ## 训练数据
@@ -177,7 +177,7 @@ EEA（事件论元抽取）
 - [2023/12/15] YAYI-UIE大模型正式对外发布并开源。
 
 ## 致谢
-- 本项目训练代码参考了 Databricks 的 [dolly](https://github.com/databrickslabs/dolly) 项目及 Huggingface [transformers](https://github.com/huggingface/transformers) 库；
+- 本项目训练代码参考了[YAYI](https://github.com/wenge-research/YAYI/blob/main/training/trainer.py) 项目及 Huggingface [transformers](https://github.com/huggingface/transformers) 库；
 - 本项目开源版本基于[Baichuan2-13B](https://github.com/baichuan-inc/Baichuan2)指令微调得到；
 - 本项目分布式训练使用了 Microsoft 的 [DeepSpeed](https://github.com/microsoft/deepspeed) 分布式训练工具及 Huggingface transformers 文档中的 [ZeRO stage 2](https://huggingface.co/docs/transformers/main_classes/deepspeed#zero2-config) 配置文件；
 - 我们非常感谢以下开源项目对我们的帮助：[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [DeepKE-LLM](https://github.com/zjunlp/KnowLM/tree/main)
