@@ -26,7 +26,7 @@
 | 名称 | 🤗 HF模型标识  |  下载地址  |
 |:----------|:----------:|:----------:|
 |  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |
-| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|
+| YAYI-UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|
 
 
 ## 训练数据
@@ -117,7 +117,7 @@ AI，Literature，Music，Politics，Science为英文数据集，boson，clue，
 | UIE | 31.14 | 38.97 | 33.91 | 46.28 | 41.56 | 38.37 | 40.64 | 34.91 | 40.79 | 38.78 |
 | USM | 28.18 | 56 | 44.93| 36.1 | 44.09 | 41.86 | - | - | - | - |
 | InstructUIE |	49 | 47.21 | 53.16 | 48.15 | 49.3 | 49.36 | - | - | - | - |
-| DeepKE-LLM | 13.76 | 20.18 | 14.78 | 33.86 | 9.19 | 18.35 | 25.96 | 4.44 | 25.2 | 18.53 |
+| KnowLM | 13.76 | 20.18 | 14.78 | 33.86 | 9.19 | 18.35 | 25.96 | 4.44 | 25.2 | 18.53 |
 | YAYI-UIE | 52.4 | 45.99 | 51.2	| 51.82 | 50.53 | 50.39 | **49.25** | **36.46** | 36.78 | **40.83** |
 
 2. RE任务
@@ -130,7 +130,7 @@ FewRe，Wiki-ZSL为英文数据集， SKE 2020，COAE2016，IPRE为中文数据�
 | ZETT(T5-small) | 30.53 | 31.74 | 31.14 | - | - | - | - |
 | ZETT(T5-base) | 33.71 | 31.17 | 32.44 | - | - | - | - |
 | InstructUIE |**39.55** | 35.2 | 37.38 | - | - | - | - |
-| DeepKE-LLM | 17.46 | 15.33 | 16.40 | 0.4 | 6.56 | 9.75 |5.57|
+| KnowLM | 17.46 | 15.33 | 16.40 | 0.4 | 6.56 | 9.75 |5.57|
 | YAYI-UIE | 36.09 | **41.07** | **38.58** | **70.8** | **19.97** | **22.97**| **37.91**|
 
 3. EE任务
@@ -180,7 +180,7 @@ EEA（事件论元抽取）
 - 本项目训练代码参考了[YAYI](https://github.com/wenge-research/YAYI/blob/main/training/trainer.py) 项目及 Huggingface [transformers](https://github.com/huggingface/transformers) 库；
 - 本项目开源版本基于[Baichuan2-13B](https://github.com/baichuan-inc/Baichuan2)指令微调得到；
 - 本项目分布式训练使用了 Microsoft 的 [DeepSpeed](https://github.com/microsoft/deepspeed) 分布式训练工具及 Huggingface transformers 文档中的 [ZeRO stage 2](https://huggingface.co/docs/transformers/main_classes/deepspeed#zero2-config) 配置文件；
-- 我们非常感谢以下开源项目对我们的帮助：[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [DeepKE-LLM](https://github.com/zjunlp/KnowLM/tree/main)
+- 我们非常感谢以下开源项目对我们的帮助：[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [KnowLM](https://github.com/zjunlp/KnowLM/tree/main)
 
 ## 引用
 如果您在您的工作中使用了我们的模型，可以引用我们的论文：
