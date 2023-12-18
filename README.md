@@ -155,8 +155,10 @@ EEA（事件论元抽取）
 |InstructUIE| **21.78** | - | - | - |
 | YAYI-UIE | 19.74 | **63.06** | 59.42 | **61.24** |
 
-
-![零样本推理性能分布](/assets/zh-0shot.png)
+<div align="center">
+![零样本推理性能](/assets/0shot.png)
+![中文零样本推理性能](/assets/zh-0shot.png)
+</div>
 
 ## 相关协议
 #### 局限性
