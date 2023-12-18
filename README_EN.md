@@ -4,28 +4,31 @@
 <img src="./assets/yayi_dark_small.png" alt="YaYi" style="width: 30%; display: block; margin: auto;">
 <br>
 
-[![License](https://img.shields.io/badge/Code%20License-Apache_2.0-brightgreen.svg)](./LICENSE)
+[![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-brightgreen.svg)](./LICENSE)
+[![Data License](https://img.shields.io/badge/Data%20License-CC_BY_NC_4.0-red.svg)](./LICENSE_DATA)
+[![Model License](https://img.shields.io/badge/Model%20License-YaYi_UIE-blue.svg)](./LICENSE_MODEL)
 
 [[📖README](./README_EN.md)] 
 [[🤗HF Repo](https://huggingface.co/wenge-research)]
 [[🔗URL](https://yayi.wenge.com)]
 
+English | [中文](./README.md)
+
 </div>
 
 
 ## Introduction
-The YAYI Unified Information Extraction Large Language Model (YAYI-UIE), fine-tuned on millions of high-quality data, integrates training across tasks such as Named Entity 
-Recognition (NER), Relation Extraction (RE), and Event Extraction (EE). The model is able to extract structured outputs across diverse fields including general, security, 
-finance, biology, medicine, business, personal, automotive, film, industry, restaurant, and science.
+The YAYI Unified Information Extraction Large Language Model (YAYI-UIE), fine-tuned on millions of high-quality data, integrates training across tasks such as Named Entity Recognition (NER), Relation Extraction (RE), and Event Extraction (EE). The model is able to extract structured outputs across diverse fields including general, security, finance, biology, medicine, business, personal, automotive, film, industry, restaurant, and science.
 
 The open-source of YAYI-UIE aims to foster the growth of the Chinese PLM open-source community. We can't wait to collaborate with our partners to develop the YAYI Large Models ecosystem!
 
 ![instruction](./assets/YAYI-UIE-1.png)
 
-## Model links
-| Model Name | 🤗HF |  Download Links  |
+## Download links
+| Name | 🤗 HF Model Name   |  Download Links  |
 | --------- | ---------    | --------- |
-|  YAYI-UIE  | wenge-research/yayi-uie  | [YAYI-UIE](https://huggingface.co/wenge-research/YAYI-UIE)  |
+|  YAYI-UIE  | wenge-research/yayi-uie  | [Model Download](https://huggingface.co/wenge-research/yayi-uie)  |
+| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [Data Download](https://huggingface.co/wenge-research/yayi_uie_sft_data)|
 
 
 ## Training Datasets
@@ -35,10 +38,7 @@ In the corpus of over a million entries, 54% are in Chinese and 46% in English. 
 - RE: In Chinese, it includes **232** types of relations like acquisitions, stake increases, restructurings, nationality, aliases, relatives, buying shares, transfers, causes, locations of occurrence, manufacturers, etc., and in English, 236 types of relations such as founded by, state or province of headquarters, employee of, occupation, creator, etc.
 - EE: Chinese covers **84** types of events including winning a bid, executive changes, product actions - launches, company listings, etc., and **203** types of arguments, whereas English covers **45** types of events such as Birth, Demonstration, Meeting, End of Organization, Divorce, etc., and **62** types of arguments.
 
-YAYI-UIE Training Data link [download](https://huggingface.co/wenge-research/yayi_uie_sft_data )
-
 ![Data Distribution](./assets/data-dist.png)
-
 
 ## Quick Start
 #### Set up conda envs
@@ -65,20 +65,23 @@ pip install -r requirements.txt
 #### Inference
 We've alredy open-sourced our model weights on [Huggingface](https://huggingface.co/wenge-research). 
 The following is a code snippet for using YAYI-UIE for downstream task inference. It can run on a single A100/A800 GPU, and it occupies approximately 33GB of GPU memory when using bf16 precision for inference.
+
 ```python
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers.generation.utils import GenerationConfig
-tokenizer = AutoTokenizer.from_pretrained("wenge-research/yayi-uie", use_fast=False, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("wenge-research/yayi-uie", device_map="auto", torch_dtype=torch.bfloat16, trust_remote_code=True)
-generation_config = GenerationConfig.from_pretrained("wenge-research/yayi-uie")
-prompt = "Text: Alberto Mancini won in the final 7–5 , 2–6 , 7–6 , 7–5 against Boris Becker . \nFrom the given text, extract all the entities and types. Please format the answer in json {location/person/organization：[entities]}."
-# "<reserved_13>" is a reserved token for human, "<reserved_14>" is a reserved token for assistant
-prompt = "<reserved_13>" + prompt + "<reserved_14>"
-inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-response = model.generate(**inputs, max_new_tokens=512, temperature=0)
-print(tokenizer.decode(response[0],skip_special_tokens=True))
+>>> import torch
+>>> from transformers import AutoModelForCausalLM, AutoTokenizer
+>>> from transformers.generation.utils import GenerationConfig
+>>> tokenizer = AutoTokenizer.from_pretrained("wenge-research/yayi-uie", use_fast=False, trust_remote_code=True)
+>>> model = AutoModelForCausalLM.from_pretrained("wenge-research/yayi-uie", device_map="auto", torch_dtype=torch.bfloat16, trust_remote_code=True)
+>>> generation_config = GenerationConfig.from_pretrained("wenge-research/yayi-uie")
+>>> prompt = "Text: Alberto Mancini won in the final 7–5 , 2–6 , 7–6 , 7–5 against Boris Becker . \nFrom the given text, extract all the entities and types. Please format the answer in json {location/person/organization：[entities]}."
+>>> # "<reserved_13>" is a reserved token for human, "<reserved_14>" is a reserved token for assistant
+>>> prompt = "<reserved_13>" + prompt + "<reserved_14>"
+>>> inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+>>> response = model.generate(**inputs, max_new_tokens=512, temperature=0)
+>>> print(tokenizer.decode(response[0],skip_special_tokens=True))
 ```
+
+The first-time downloading and loading the model could take some time.
 
 #### Sample Prompts
 Note:
@@ -133,7 +136,6 @@ FewRe and Wiki-ZSL are English datasets; SKE 2020, COAE2016 and IPRE are Chinese
 
 commodity news is a English dataset, FewFC and ccf_law are Chinese datasets
 
-
 EET（Event Type Extraction）
 
 | Model | commodity news | FewFC | ccf_law | ZH Average |
@@ -176,7 +178,7 @@ limited to data, models, and code. For more details, please refer to the disclai
 The code and data in this project is open-sourced under the [Apache-2.0](./LICENSE.txt) license. The use of YAYI-UIE model or its derivatives must adhere to [Baichuan2](https://github.com/baichuan-inc/Baichuan2)'s community and commercial Model License.
 
 ## Updates
-- [2023/12/15] YAYI-UIE is released and open-sourced
+- [2023/12/15] YAYI-UIE is released and open-sourced.
 
 ## Reference 
 - Databricks [dolly](https://github.com/databrickslabs/dolly) and Huggingface [transformers](https://github.com/huggingface/transformers) ；
@@ -185,7 +187,7 @@ The code and data in this project is open-sourced under the [Apache-2.0](./LICEN
 - We sincerely appreciate the support provided by the following open-source projects.:[InstructUIE](https://github.com/BeyonderXX/InstructUIE/tree/master); [Baichuan2-Base](https://github.com/baichuan-inc/Baichuan2); [InstructIE](https://github.com/zjunlp/DeepKE/tree/main/example/llm/InstructKGC); [DeepKE-LLM](https://github.com/zjunlp/KnowLM/tree/main)
 
 ## Citation
-If you are using the resource for your work, please cite the our paper:
+If you are using the resource for your work, please cite our paper:
 ```
 @article{YAYI-UIE,
   author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Minzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
@@ -194,3 +196,6 @@ If you are using the resource for your work, please cite the our paper:
   year      = {2023}
 }
 ```
+
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=wenge-research/YAYI-UIE&type=Date)](https://star-history.com/#wenge-research/YAYI-UIE&Date)
