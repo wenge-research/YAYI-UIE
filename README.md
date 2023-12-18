@@ -22,10 +22,11 @@
 
 ![instruction](/assets/YAYI-UIE-1.png)
 
-## 模型地址
-| 模型名称 | 🤗 HF模型标识  |  下载地址  |
+## 下载地址
+| 名称 | 🤗 HF模型标识  |  下载地址  |
 |:----------|:----------:|:----------:|
 |  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |
+| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/wenge-research/yayi_uie_sft_data)|
 
 
 ## 训练数据
@@ -33,10 +34,6 @@
 - NER：中文覆盖**28**个实体类型包括人物，地缘政治，组织，身体部位，药物等，英文覆盖**130**个实体类型包括Animal, Weapon, Conference, Book等。
 - RE：中文覆盖**232**种关系包括买资，增持，重组，国籍，别名，亲属，入股，转让，导致，发生地点，制造商等，英文覆盖**236**种关系包括founded by，state or province of headquarters，employee of，occupation，creator等。
 - EE：中文覆盖**84**种事件类型,包括中标，高管变动，产品行为-发布，公司上市等，和**203**种论元，英文覆盖**45**种事件类型，包括Born, Demonstrate, Meet, End Organization, Divorce等，和**62**种论元。
-
-| 数据集名称  | 🤗 HF模型标识 | 下载地址   |
-|:----------|:----------:|----------:|
-| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/wenge-research/yayi_uie_sft_data)|
 
 ![数据分布](/assets/data-dist.png)
 
