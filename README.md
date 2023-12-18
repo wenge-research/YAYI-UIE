@@ -1,5 +1,3 @@
-# YAYI UIE大模型
-
 <div align="center">
 <img src="./assets/yayi_dark_small.png" alt="YaYi" style="width: 30%; display: block; margin: auto;">
 <br>
