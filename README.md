@@ -3,12 +3,16 @@
 <div align="center">
 <img src="./assets/yayi_dark_small.png" alt="YaYi" style="width: 30%; display: block; margin: auto;">
 <br>
-
-[![License](https://img.shields.io/badge/Code%20License-Apache_2.0-brightgreen.svg)](./LICENSE)
+  
+[![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-brightgreen.svg)](./LICENSE)
+[![Data License](https://img.shields.io/badge/Data%20License-CC_BY_NC_4.0-red.svg)](./LICENSE_DATA)
+[![Model License](https://img.shields.io/badge/Model%20License-YAYI UIE-blue.svg)](./LICENSE_MODEL)
 
 [[📖README](./README.md)] 
 [[🤗HF Repo](https://huggingface.co/wenge-research)]
 [[🔗网页端](https://yayi.wenge.com)]
+
+中文 | [English](./README_EN.md)
 
 </div>
 
@@ -16,13 +20,13 @@
 ## 介绍
 雅意信息抽取统一大模型 (YAYI-UIE)在百万级人工构造的高质量信息抽取数据上进行指令微调，统一训练信息抽取任务包括命名实体识别（NER），关系抽取（RE）和事件抽取（EE），实现通用、安全、金融、生物、医疗、商业、个人、车辆、电影、工业、餐厅、科学等场景下结构化抽取。
 
-通过雅意IE大模型的开源为促进中文预训练大模型开源社区的发展，贡献自己的一份力量，通过开源，与每一位合作伙伴共建雅意大模型生态。
+通过雅意UIE大模型的开源为促进中文预训练大模型开源社区的发展，贡献自己的一份力量，通过开源，与每一位合作伙伴共建雅意大模型生态。更多技术细节，敬请期待我们的技术报告🔥。
 
 ![instruction](/assets/YAYI-UIE-1.png)
 
 ## 模型地址
-| Model Name | 🤗HF |  Download Links  |
-| --------- | ---------    | --------- |
+| 模型名称 | 🤗 HF模型标识  |  下载地址  |
+|:----------|:----------:|:----------:|
 |  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |
 
 
@@ -32,7 +36,9 @@
 - RE：中文覆盖**232**种关系包括买资，增持，重组，国籍，别名，亲属，入股，转让，导致，发生地点，制造商等，英文覆盖**236**种关系包括founded by，state or province of headquarters，employee of，occupation，creator等。
 - EE：中文覆盖**84**种事件类型,包括中标，高管变动，产品行为-发布，公司上市等，和**203**种论元，英文覆盖**45**种事件类型，包括Born, Demonstrate, Meet, End Organization, Divorce等，和**62**种论元。
 
-YAYI-UIE 训练数据[下载地址](https://huggingface.co/wenge-research/yayi_uie_sft_data )。
+| 数据集名称  | 🤗 HF模型标识 | 下载地址   |
+|:----------|:----------:|----------:|
+| YAYI UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/wenge-research/yayi_uie_sft_data)|
 
 ![数据分布](/assets/data-dist.png)
 
@@ -63,18 +69,18 @@ pip install -r requirements.txt
 模型已在我们的 [Huggingface 模型仓库](https://huggingface.co/wenge-research) 开源，欢迎下载使用。以下是一个简单调用 `YAYI-UIE` 进行下游任务推理的示例代码，可在单张 A100/A800 等GPU运行，使用bf16精度推理时约占用 33GB 显存：
 
 ```python
-import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
-from transformers.generation.utils import GenerationConfig
-tokenizer = AutoTokenizer.from_pretrained("wenge-research/yayi-uie", use_fast=False, trust_remote_code=True)
-model = AutoModelForCausalLM.from_pretrained("wenge-research/yayi-uie", device_map="auto", torch_dtype=torch.bfloat16, trust_remote_code=True)
-generation_config = GenerationConfig.from_pretrained("wenge-research/yayi-uie")
-prompt = "文本:氧化锆陶瓷以其卓越的物理和化学特性在多个行业中发挥着关键作用。这种材料因其高强度、高硬度和优异的耐磨性，广泛应用于医疗器械、切削工具、磨具以及高端珠宝制品。在制造这种高性能陶瓷时，必须遵循严格的制造标准，以确保其最终性能。这些标准涵盖了从原材料选择到成品加工的全过程，保障产品的一致性和可靠性。氧化锆的制造过程通常包括粉末合成、成型、烧结和后处理等步骤。原材料通常是高纯度的氧化锆粉末，通过精确控制的烧结工艺，这些粉末被转化成具有特定微观结构的坚硬陶瓷。这种独特的微观结构赋予氧化锆陶瓷其显著的抗断裂韧性和耐腐蚀性。此外，氧化锆陶瓷的热膨胀系数与铁类似，使其在高温应用中展现出良好的热稳定性。因此，氧化锆陶瓷不仅在工业领域，也在日常生活中的应用日益增多，成为现代材料科学中的一个重要分支。\n抽取文本中可能存在的实体，并以json{制造品名称/制造过程/制造材料/工艺参数/应用/生物医学/工程特性：[实体]}格式输出。"
-# "<reserved_13>" is a reserved token for human, "<reserved_14>" is a reserved token for assistant
-prompt = "<reserved_13>" + prompt + "<reserved_14>"
-inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-response = model.generate(**inputs, max_new_tokens=512, temperature=0)
-print(tokenizer.decode(response[0],skip_special_tokens=True))
+>>> import torch
+>>> from transformers import AutoModelForCausalLM, AutoTokenizer
+>>> from transformers.generation.utils import GenerationConfig
+>>> tokenizer = AutoTokenizer.from_pretrained("wenge-research/yayi-uie", use_fast=False, trust_remote_code=True)
+>>> model = AutoModelForCausalLM.from_pretrained("wenge-research/yayi-uie", device_map="auto", torch_dtype=torch.bfloat16, trust_remote_code=True)
+>>> generation_config = GenerationConfig.from_pretrained("wenge-research/yayi-uie")
+>>> prompt = "文本:氧化锆陶瓷以其卓越的物理和化学特性在多个行业中发挥着关键作用。这种材料因其高强度、高硬度和优异的耐磨性，广泛应用于医疗器械、切削工具、磨具以及高端珠宝制品。在制造这种高性能陶瓷时，必须遵循严格的制造标准，以确保其最终性能。这些标准涵盖了从原材料选择到成品加工的全过程，保障产品的一致性和可靠性。氧化锆的制造过程通常包括粉末合成、成型、烧结和后处理等步骤。原材料通常是高纯度的氧化锆粉末，通过精确控制的烧结工艺，这些粉末被转化成具有特定微观结构的坚硬陶瓷。这种独特的微观结构赋予氧化锆陶瓷其显著的抗断裂韧性和耐腐蚀性。此外，氧化锆陶瓷的热膨胀系数与铁类似，使其在高温应用中展现出良好的热稳定性。因此，氧化锆陶瓷不仅在工业领域，也在日常生活中的应用日益增多，成为现代材料科学中的一个重要分支。\n抽取文本中可能存在的实体，并以json{制造品名称/制造过程/制造材料/工艺参数/应用/生物医学/工程特性：[实体]}格式输出。"
+>>> # "<reserved_13>" is a reserved token for human, "<reserved_14>" is a reserved token for assistant
+>>> prompt = "<reserved_13>" + prompt + "<reserved_14>"
+>>> inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+>>> response = model.generate(**inputs, max_new_tokens=512, temperature=0)
+>>> print(tokenizer.decode(response[0],skip_special_tokens=True))
 ```
 
 #### 指令样例
@@ -101,14 +107,10 @@ print(tokenizer.decode(response[0],skip_special_tokens=True))
 3. 事件抽取任务
 ```
 文本：xx
-已知论元角色列表是[质押方,披露时间,质权方,质押物,质押股票/股份数量,事件时间,质押物所属公司,质押物占总股比,质押物占持股比]，请根据论元角色列表从给定的输入中抽取可能的论元，以json{角色:论元,}格式输出。
-```
-```
-文本：xx
 已知论元角色列表是[时间，地点，会见主体，会见对象]，请根据论元角色列表从给定的输入中抽取可能的论元，以json{角色:论元}格式输出。
 ```
 
-## 模型zero-shot评测
+## 模型zero-shot评测结果
 1. NER任务
 
 AI，Literature，Music，Politics，Science为英文数据集，boson，clue，weibo为中文数据集
@@ -197,3 +199,6 @@ EEA（事件论元抽取）
   year      = {2023}
 }
 ```
+
+## Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=wenge-research/YAYI-UIE&type=Date)](https://star-history.com/#wenge-research/YAYI-UIE&Date)
