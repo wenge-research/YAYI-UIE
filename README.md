@@ -189,7 +189,8 @@ EEA（事件论元抽取）
 @article{YAYI-UIE,
   author    = {Xinglin Xiao, Yijie Wang, Nan Xu, Yuqi Wang, Hanxuan Yang, Minzheng Wang, Yin Luo, Lei Wang, Wenji Mao, Dajun Zeng}},
   title     = {YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction},
-  journal   = {arXiv preprint arXiv},
+  journal   = {arXiv preprint arXiv:2312.15548},
+  url       = {https://arxiv.org/abs/2312.15548},
   year      = {2023}
 }
 ```
