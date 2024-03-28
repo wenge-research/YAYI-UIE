@@ -14,19 +14,21 @@
 
 </div>
 
+## 更新
+[2024.03.28] 所有模型和数据上传魔搭社区。
 
 ## 介绍
 雅意信息抽取统一大模型 (YAYI-UIE)在百万级人工构造的高质量信息抽取数据上进行指令微调，统一训练信息抽取任务包括命名实体识别（NER），关系抽取（RE）和事件抽取（EE），实现通用、安全、金融、生物、医疗、商业、个人、车辆、电影、工业、餐厅、科学等场景下结构化抽取。
 
-通过雅意UIE大模型的开源为促进中文预训练大模型开源社区的发展，贡献自己的一份力量，通过开源，与每一位合作伙伴共建雅意大模型生态。更多技术细节，敬请期待我们的技术报告🔥。
+通过雅意UIE大模型的开源为促进中文预训练大模型开源社区的发展，贡献自己的一份力量，通过开源，与每一位合作伙伴共建雅意大模型生态。更多技术细节，欢迎阅读我们的技术报告🔥[YAYI-UIE: A Chat-Enhanced Instruction Tuning Framework for Universal Information Extraction](https://arxiv.org/abs/2312.15548)。
 
 ![instruction](/assets/YAYI-UIE.png)
 
 ## 下载地址
-| 名称 | 🤗 HF模型标识  |  下载地址  |
-|:----------|:----------:|:----------:|
-|  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |
-| YAYI-UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|
+| 名称 | 🤗 HF模型标识  |  下载地址  | 魔搭模型标识 | 下载地址 |
+|:----------|:----------:|:----------:|:----------:|:----------:|
+|  YAYI-UIE  | wenge-research/yayi-uie  | [模型下载](https://huggingface.co/wenge-research/yayi-uie)  |wenge-research/yayi-uie  | [模型下载](https://modelscope.cn/models/wenge-research/yayi-uie)  |
+| YAYI-UIE Data | wenge-research/yayi_uie_sft_data| [数据集下载](https://huggingface.co/datasets/wenge-research/yayi_uie_sft_data)|wenge-research/yayi_uie_sft_data| [数据集下载](https://modelscope.cn/datasets/wenge-research/yayi_uie_sft_data)|
 
 
 ## 训练数据
