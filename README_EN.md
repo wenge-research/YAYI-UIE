@@ -12,7 +12,7 @@
 [[🤗HF Repo](https://huggingface.co/wenge-research)]
 [[🔗URL](https://yayi.wenge.com)]
 
-English | [中文](./README.md)
+English | [中文](./README.md) | [日本語](./README_JP.md)
 
 </div>
 
