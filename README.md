@@ -10,7 +10,7 @@
 [[🤗HF Repo](https://huggingface.co/wenge-research)]
 [[🔗网页端](https://yayi.wenge.com)]
 
-中文 | [English](./README_EN.md)
+中文 | [English](./README_EN.md) | [日本語](./README_JP.md)
 
 </div>
 
